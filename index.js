@@ -47,3 +47,29 @@ const pizzas = [
     ingredientes: ["Muzzarella", "Tomate", "Anana"],
   },
 ];
+
+// Ejercicio A
+pizzas.forEach((pizza) => {
+  if (pizza.id % 2 !== 0) {
+    console.log(`la ${pizza.nombre} tiene un id impar`);
+  }
+});
+
+// ejercicio B
+const precioMenorA600 = (pizza) => pizza.precio < 600;
+if (pizzas.some(precioMenorA600)) {
+  console.log("Hay pizzas con precio menor a $600");
+} else {
+  console.log("No hay pizzas con precio menor a $600");
+}
+
+// ejercicio C
+pizzas.forEach((pizza) =>
+  console.log(`Prueba nuestra ${pizza.nombre} por tan solo $${pizza.precio}`)
+);
+
+// ejercicio D
+pizzas.forEach((pizza) => {
+  console.log(`los ingredientes de la ${pizza.nombre} son:`);
+  pizza.ingredientes.forEach((ingrediente) => console.log(ingrediente));
+});
